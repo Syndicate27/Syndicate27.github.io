@@ -1,0 +1,27 @@
+/*Loading Page CSS*/
+
+/*position:-scale:-rotation:-opacity:-these are the most efficient to transform*/
+
+body {
+	padding: 50px;
+}
+.trigger {
+	width: 200px;
+	height: 200px;
+	border: 20px groove rgb(104, 0, 106);
+	background-color: #ddd;
+}
+.box {
+	display: inline-block;
+	background-color: pink;
+	width: 200px;
+	height: 200px;
+	transition: transform 300ms ease-in-out;
+	pointer-events: none; /*Dont register any hovers or clicks on this*/
+}
+/*When trigger is hovered then take box*/
+.trigger:hover .box {
+	transform: translate(500px, 150px)
+	rotate(360deg); 
+}
+
