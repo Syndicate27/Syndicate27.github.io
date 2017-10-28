@@ -51,6 +51,13 @@ li a {
 		background-color: rgb(80,64,143);
 		color: white;
 	}
+div#thumbs-up {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	left:700px;
+	bottom: 200px;
+}
 /*Welcome Section*/
 div#welcome-section {
 	margin-top: 10px;
