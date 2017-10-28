@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us" id="webpage">
+	<head>
+		<title>HSI PTO | Contact Us</title>
+		<meta name="Jeremiah Nji & Robert V." content="Parent Teacher Organization" description="Harmony Public Schools PTO">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="PTO_ContactUs.css">
+		<nav id="navbar">
+			<ul>
+				<li><a href="PTO_Home.html"><b>Home</b></a></li>
+				<li><a href="PTO_AboutUs.html"><b>About Us</b></a></li>
+				<li><a href="PTO_Members.html"><b>Members</b></a></li>
+				<li><a href="ContactUs.html"><b>Contact Us</b></a>></li>
+			</ul>
+		</nav>
+	</head>
+	<body>
+		<div id="m_container">
+			<hr>
+			<p> <strong>Please feel free to contact us. There is a form below where you can enter your information for us to reach you. We would love to hear from you!</strong></p>
+			<hr>
+		</div>
+		
+			<!-- Contact Informtation Fieldset-->
+			<fieldset>
+				<legend><h2>Contact Information</h2></legend>
+				<form id="contact_form" action="PTO_ContactUs2.php" method="post" name="Contact_Info" onsubmit="return validateForm()"> 
+				<!--Linking php form-->
+				<label>First Name:<br /><input type="text" name="f_name" placeholder="Input First Name" ></label><br /><br />
+				<label>Last Name:<br /><input type="text" name="l_name" placeholder="Input Last Name" ></label><br /><br />
+				<!--Radio Buttons for gender-->
+				Gender: 
+				<input id="female" type="radio" name="gender" value="f"><label for="female">Female</label> 
+				<input id="male" type="radio" name="gender" value="m"><label for="male">Male</label><br /><br />
+				<label>Email:<br /><input type="text" name="email" placeholder="Input Email Address"></label><br />
+				<p>Please enter in below anything you would like to inquire about us</p>
+				<textarea name="comments" required="required" placeholder="Enter your comments in here...."></textarea><br /><br />
+				<input type="submit" name="c_info" value="Submit">
+				</form>
+ 			</fieldset>
+ 		
+ 		<!-- Javascript Validation for form-->	
+ 		<script>
+
+ 			function validateForm() {
+
+ 				var v = document.forms["Contact_Info"]["f_name"].value;
+ 				var x = document.forms["Contact_Info"]["l_name"].value;
+ 				var z = document.forms["Contact_Info"]["email"].value;
+
+ 				if( v == "") {
+ 					alert("First Name must be entered. Please use alphabetical characters only");
+ 					return false;
+ 				}
+ 				if( x == "") {
+ 					alert("Last Name must be entered. Please use alphabetical characters only");
+ 					return false;
+ 				}
+ 				if( z == "") {
+ 					alert("An Email Address must be entered. Do not forget the @ symbol");
+ 					return false;
+ 				}
+ 			}
+
+		</script>
+ 		<!--End of Validation Script Form-->
+	</body>
+	<!--Website footer-->
+	<footer id="fcontainer">
+		<p> This website is copyright &copy 2016</p>
+		<p> This website is strucutred for the <b>PTO</b> of <strong>Harmony School of Innovation</strong></p>
+		<p> Website Developers: <strong>Jeremiah Nji & Robert Vinjolli</strong></p>
+	</footer>
+
+
+</html>

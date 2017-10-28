@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us" id="webpage">
+	<head>
+		<title>HSI PTO | Homepage</title>
+		<meta name="Jeremiah Nji & Robert V." content="Parent Teacher Organization" description="Harmony Public Schools PTO">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="PTO_Home.css">
+		<!-- Begin Navigation Bar-->
+		<nav id="navbar">
+			<ul>
+				<li><a href="PTO_Home.html"><b>Home</b></a></li>
+				<li><a href="PTO_AboutUs.html"><b>About Us</b></a></li>
+				<li><a href="PTO_Members.html"><b>Members</b></a></li>
+				<li><a href="PTO_ContactUs.html"><b>Contact Us</b></a>></li>
+			</ul>
+		</nav>
+		<!--End Navigation Bar-->
+	</head>
+	<body>
+		<!--Begin Image Slider-->
+		<div id="img_slider">
+			<img class="slides" src="images/home_slide.jpg">
+			<img class="slides" src="images/4.jpg"> 
+			<img class="slides" src="images/3.jpg">
+			<img class="slides" src="images/6.jpg">
+			<a class="left_button" onclick="plusDivs(-1)">&#10094;</a>
+			<a class="right_button" onclick="plusDivs(+1)">&#10095;</a>
+			<div class="center_buttons">
+					<span class="white_hover" onclick="currentDiv(1)"></span>
+    				<span class="white_hover" onclick="currentDiv(2)"></span>
+    				<span class="white_hover" onclick="currentDiv(3)"></span>
+			</div>
+		</div>
+		<!-- Begin Javascript to Control Image Slider-->
+		<script>
+			var slideIndex = 0;
+			carousel();
+
+			function carousel() {
+		    var i;
+		    var x = document.getElementsByClassName("slides");
+		    for (i = 0; i < x.length; i++) {
+		      x[i].style.display = "none"; 
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length) {slideIndex = 1} //resets slide
+		    x[slideIndex-1].style.display = "block"; 
+		    setTimeout(carousel, 10000); // Change image every 10 seconds
+			}
+
+			var x, n = 0, rotYINT;
+
+			function rotateIMG() {
+				x = document.getElementById("involvement_img").value;
+				clearInterval(rotYINT);
+				rotYINT=setInterval("startRotate()",10);
+			}
+
+			function startRotate() {
+				nx = nx + 1;
+				x.style.transform="rotateY(" + nx + "deg)";
+				x.style.webkitTransform="rotateY(" + nx + "deg)"; //This is to enable thi function to work on Safari
+				x.style.OTransform="rotateY(" + nx + "deg)"; //This is to enable thi function to work on Opera
+				x.style.MozTransform="rotateY(" + nx + "deg)"; //This is to enable thi function to work on Mozilla
+
+				if( nx == 180 || nx ==360) {
+					clearInterval(rotYINT);
+					if( nx >= 360 ) {
+						nx = 0;
+					}
+				}
+			}
+
+		</script>
+		<!-- End Javascript to Control Image Slider-->
+		<!--Begin Focus Container-->
+		<div class="container1">
+			<h1>FOCUS</h1>
+			<p id="focus"><h2><span>Involvement</span><span>Students</span><span>Community</span></h2></p>
+			<div id="focus_attributes">
+			<p><image id="involvement_img" src="images/involvement.jpg" onmouseover="rotateIMG()"><image id="students_img" src="images/students.jpg"><image id="community_img" src="images/community.jpg"></p>
+			</div>
+		</div>
+		<!--End Focus Container-->
+		<!--Begin Harmony School of Innovation Hot Link-->
+		<div class="container2">
+			<h1>Harmony School of Innovation</h1>
+			<a href="https://www.hsihouston.org"><image id="logo_link" src="images/harmony_logo.jpg"></a>
+			<p><strong>If you would like to visit the school website click on the logo image above</strong></p>
+
+		</div>
+	</body>
+	<footer id="fcontainer">
+		<p> This website is copyright &copy 2016</p>
+		<p> This website is strucutred for the <b>PTO</b> of <strong>Harmony School of Innovation</strong></p>
+		<p> Website Developers: <strong>Jeremiah Nji & Robert Vinjolli</strong></p>
+	</footer>
+</html>

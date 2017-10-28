@@ -1,0 +1,85 @@
+/* !DOCTYPE CSS */
+/*Entire webpage frame structure */
+html#webpage {
+	width: auto;
+	height: auto;
+	margin: 0px 160px;
+	padding: 0px;
+	background-image: url(images/img11.jpg);
+	background-position: none; /*Only one image so we do not need to define a position*/
+	background-repeat: repeat;
+	background-size: 1700px;
+}
+/*  Begin Navigation Bar */
+nav#navbar {
+	background-color: rgba(0,0,0,.8);
+	list-style: none;
+	height: 40px;
+	position: fixed;
+	text-align: left;
+	overflow: visible;
+	float: top;
+	top: 0;
+}
+nav li {
+	display: inline;
+}
+li a{
+	color: rgba(10,132,243,1);
+ 	text-decoration: none;
+ 	margin: 0px 40px;
+ 	padding: 0px 30px;
+ }
+ li a:hover {
+ 	background-color: rgba(255,255,255,1); /*background color of nav with mouse over will change color*/
+ }
+/* End Navigation Bar */
+
+/*Begin Legend setup */
+legend {
+	text-align: left;
+}
+/* Begin m_conatiner */
+div#m_container {
+	margin-top: 100px;
+	background-color: rgba(0,0,0,.9);
+	color: rgba(10,132,243,1);
+	text-align: center;
+	font-size: 20px;
+}
+
+/* Begin Fieldset */
+fieldset {
+	color: rgb(255,255,255);
+	background-color: rgba(0,0,0,.8);
+	position: center;
+	text-align: center;
+}
+
+/* End Fieldset */
+
+/* Begin Form */
+form#contact_form {
+	/*mehhh not really necessary */
+}
+
+
+/* End Form */
+
+/* Begin Textarea */
+textarea {
+	background-color: rgba(255,255,255,1);
+	width: 300px;
+	height: 100px;
+}
+/* Begin Footer */
+footer#fcontainer {
+	background-color: rgb(255,255,255);
+	border: groove gold 5px;
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+/* End Footer */

@@ -1,0 +1,62 @@
+/* !DOCTYPE CSS */
+/*Entire webpage frame structure */
+html#webpage {
+	width: auto;
+	height: auto;
+	margin: 0px 160px;
+	padding: 0px;
+	background-image: url(images/img11.jpg);
+	background-position: none; /*Only one image so we do not need to define a position*/
+	background-repeat: repeat;
+	background-size: 1700px; /*1700-160 Means we have center space of 1380px in the middle */
+	
+}
+/*  Begin Navigation Bar */
+nav#navbar {
+	background-color: rgba(0,0,0,.8);
+	list-style: none;
+	height: 40px;
+	position: fixed;
+	text-align: left;
+	overflow: visible;
+	float: top;
+	top: 0;
+}
+nav li {
+	display: inline;
+}
+li a{
+	color: rgba(10,132,243,1);
+ 	text-decoration: none;
+ 	margin: 0px 40px;
+ 	padding: 0px 30px;
+ }
+ li a:hover {
+ 	background-color: rgba(255,255,255,1); /*background color of nav with mouse over will change color*/
+ }
+/* End Navigation Bar */
+
+
+/*Begin Container */
+div.container {
+	margin-top: 100px;
+	height: auto;
+	background-color: rgba(0,0,0,.7);
+	color: rgb(255,255,255);
+	font-size: 80px;
+	text-align: center;
+	border: 5px groove;
+	border-radius: 10px;
+}
+/* End Container */
+
+/* Begin Footer */
+footer#fcontainer {
+	background-color: rgb(255,255,255);
+	border: groove gold 5px;
+	text-align: center;
+	margin-top: 100px; 
+	margin-bottom: 0px;
+
+}
+/* End Footer */
