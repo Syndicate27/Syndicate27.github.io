@@ -1,0 +1,197 @@
+package chromebook_app;
+import java.util.Scanner;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.awt.*;
+
+
+/**
+ * The LOGIN GUI is the gateway between the user and the application
+ * the program should read the users USERNAME and PASSWORD.
+ * the program should then check the information for validity and if confirmed
+ * the program should connect the user to the MAIN GUI
+ * @author jnji
+ */
+public class LoginGUI extends javax.swing.JFrame {
+    
+    //Initialize Scanner
+    BufferedReader input = new BufferedReader (new InputStreamReader (System.in));
+    Users person = new Users(null, null, null);
+    
+    
+    /**
+     * Creates new form StarGUI
+     */
+    public LoginGUI() {
+        initComponents();
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        versionLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        creatorLabel = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
+        loginProgressBar = new javax.swing.JProgressBar();
+        usernameField = new javax.swing.JTextField();
+        passwordField = new javax.swing.JTextField();
+        backgroundLabel = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CB_App_Background");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        versionLabel.setFont(new java.awt.Font("Javanese Text", 0, 13)); // NOI18N
+        versionLabel.setForeground(new java.awt.Color(255, 255, 255));
+        versionLabel.setText("Verion 1.0");
+        getContentPane().add(versionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+
+        titleLabel.setFont(new java.awt.Font("Trajan Pro", 0, 48)); // NOI18N
+        titleLabel.setText("Chromebook Entry Application");
+        titleLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 900, 80));
+
+        creatorLabel.setFont(new java.awt.Font("Javanese Text", 0, 14)); // NOI18N
+        creatorLabel.setForeground(new java.awt.Color(102, 255, 102));
+        creatorLabel.setText("Author and Creator: Jeremiah Nji");
+        getContentPane().add(creatorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 670, 240, 20));
+
+        loginButton.setFont(new java.awt.Font("OCR A Std", 1, 24)); // NOI18N
+        loginButton.setText("Login");
+        loginButton.setToolTipText("Click button to login to applicaiton");
+        loginButton.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 204), new java.awt.Color(0, 0, 0)));
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, 130, 50));
+
+        loginProgressBar.setBackground(new java.awt.Color(102, 100, 78));
+        getContentPane().add(loginProgressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 524, 540, 40));
+
+        usernameField.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usernameField.setToolTipText("Enter Username");
+        usernameField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 220, 50));
+
+        passwordField.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordField.setToolTipText("Enter Password");
+        passwordField.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 220, 50));
+
+        backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/Background_01.jpg"))); // NOI18N
+        backgroundLabel.setNextFocusableComponent(usernameField);
+        getContentPane().add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, 1366, 768));
+
+        jToggleButton1.setText("jToggleButton1");
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 390, -1, -1));
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+    /*
+    ** THe loginButton handles the usernameField and passwordField. Upon the event
+    ** of being clicked the information entered into the fields will be checked
+    ** for validity
+    */
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+       
+    }//GEN-LAST:event_loginButtonActionPerformed
+    /*
+    ** Only appropriate usernames should be entered. This field should be checked/
+    ** validated for integritty and matched with the password. No listener
+    ** reuired.
+    */
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        try {
+            person.username = input.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_usernameFieldActionPerformed
+    /*
+    ** The passwordField accepts the users password and holds any value entered
+    ** up until the loginButton has been clicked. 
+    ** A "password toggle button" should be added on the side to reveal the password being 
+    ** entered if the user wishes so. Limit characters on the password entry
+    ** field.
+    */
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        try {
+            person.password = input.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_passwordFieldActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginGUI().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backgroundLabel;
+    private javax.swing.JLabel creatorLabel;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JProgressBar loginProgressBar;
+    private javax.swing.JTextField passwordField;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JTextField usernameField;
+    private javax.swing.JLabel versionLabel;
+    // End of variables declaration//GEN-END:variables
+
+    private void addMouseListener() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+}
